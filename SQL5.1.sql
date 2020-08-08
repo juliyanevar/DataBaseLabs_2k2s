@@ -1,0 +1,24 @@
+use NJV_MyBase;
+
+select * from FILMS one full outer join FILM_ACTOR two
+		on one.IDFILM=two.IDFILM
+		where two.IDACTOR is not null;
+
+
+select * from FILMS one full outer join FILM_ACTOR two
+		on one.IDFILM=two.IDFILM
+		order by one.IDFILM, two.IDFILM;
+
+select FILMS.IDFILM,FILMS.NAME,FILMS.IDGENRE,FILM_ACTOR.IDACTOR 
+	from FILMS inner join FILM_ACTOR
+	on FILMS.IDFILM=FILM_ACTOR.IDFILM;
+
+select FILMS.IDFILM,FILMS.NAME,FILMS.IDGENRE,FILM_ACTOR.IDACTOR 
+	from FILMS left join FILM_ACTOR
+	on FILMS.IDFILM=FILM_ACTOR.IDFILM;
+
+
+
+select FILMS.IDFILM,FILMS.NAME,FILMS.IDGENRE,FILM_ACTOR.IDACTOR 
+	from FILMS right join FILM_ACTOR
+	on FILMS.IDFILM=FILM_ACTOR.IDFILM;
